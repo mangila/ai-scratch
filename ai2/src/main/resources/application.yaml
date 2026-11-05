@@ -1,0 +1,35 @@
+# Shell config
+shell:
+  system-context: "You are a helpful, concise AI assistant running locally via Ollama and Spring Shell."
+# Spring Properties
+spring:
+  application:
+    name: ai2
+  shell:
+    command:
+      help:
+        enabled: true
+      version:
+        enabled: true
+        show-git-short-commit-id: true
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      init:
+        pull-model-strategy: when_missing
+        timeout: 10m
+        max-retries: 3
+        chat:
+          additional-models:
+            - "mistral"
+            - "llama3.2"
+            - "qwen2.5:0.5b"
+            - "deepseek-r1:1.5b"
+        embedding:
+          include: false
+      chat:
+        model: "mistral"
+        temperature: 0.7
+    chat:
+      client:
+        enabled: true

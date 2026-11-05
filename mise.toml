@@ -1,0 +1,10 @@
+[tools]
+python = "3.12"
+ollama = "latest"
+
+[env]
+_.python.venv = { path = ".venv", create = true }
+
+[tasks.commit]
+description = "Add all, amend commit and force push"
+run = "git add . && git commit --amend --no-edit && git push --force-with-lease"
