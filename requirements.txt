@@ -1,2 +1,2 @@
-pre_commit==4.6.2
+pre_commit==4.7.0
 open-webui==0.13.0
